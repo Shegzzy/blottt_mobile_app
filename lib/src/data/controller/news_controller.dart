@@ -40,11 +40,11 @@ class GeneralNewsController extends GetxController implements GetxService {
         responseModel = ResponseModel(true, "Successfully fetched news");
       } else {
         _errorFetchingNews = true;
+        _newsModel.clear();
         update();
         responseModel = ResponseModel(false, response.statusText ?? "Error");
       }
 
-      // print(_newsModel.first.toJson());
       return responseModel;
     } catch (e) {
       print('Error getting news: $e');

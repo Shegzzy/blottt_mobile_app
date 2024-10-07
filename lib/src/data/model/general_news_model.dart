@@ -37,19 +37,5 @@ class NewsModel {
       url: json['url'] ?? '',
     );
   }
-
-  // Map<String, dynamic> toJson() {
-  //   return {
-  //     'category': category,
-  //     'datetime': datetime,
-  //     'headline': headline,
-  //     'id': id,
-  //     'image': image,
-  //     'related': related,
-  //     'source': source,
-  //     'summary': summary,
-  //     'url': url,
-  //   };
-  // }
 }
 
