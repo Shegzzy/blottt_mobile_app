@@ -15,7 +15,7 @@ class Fonts {
   }) =>
       TextStyle(
         fontFamily: 'Robot',
-        fontSize: fontSize ?? Dimensions.font18,
+        fontSize: fontSize ?? 18,
         fontWeight: fontWeight ?? FontWeight.w700,
         color: color ?? Colors.white,
         decoration: decoration ?? TextDecoration.none,

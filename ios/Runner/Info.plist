@@ -41,6 +41,12 @@
 			<string>UIInterfaceOrientationLandscapeLeft</string>
 			<string>UIInterfaceOrientationLandscapeRight</string>
 		</array>
+		<key>UIBackgroundModes</key>
+        <array>
+            <string>fetch</string>
+        </array>
+		<key>NSUserNotificationUsageDescription</key>
+        <string>Notifications may include alerts, sounds, and icon badges. These can be configured in Settings.</string>
 		<key>CADisableMinimumFrameDurationOnPhone</key>
 		<true/>
 		<key>UIApplicationSupportsIndirectInputEvents</key>

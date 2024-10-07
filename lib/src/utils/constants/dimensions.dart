@@ -48,15 +48,6 @@ class Dimensions{
   static double height230 = screenHeight/3.05;
   static double height300 = screenHeight/2.34;
 
-  //Dynamic font sizes
-  // static double font20 = screenHeight/35.1;
-  static double font20 = screenHeight/35.1;
-  static double font18 = screenHeight/39;
-  static double font16 = screenHeight/45;
-  static double font14 = screenHeight/51.43;
-  static double font12 = screenHeight/60;
-  static double font10 = screenHeight/70.2;
-
   //Dynamic border radius
   static double radius8 = screenHeight/87.75;
   static double radius15 = screenHeight/46.8;
