@@ -28,17 +28,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
   }
 
   @override
-  void initState() {
-    super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((_) async {
-      var name = Get.find<GeneralNewsController>().firstName;
-      if(name.isNotEmpty){
-        Get.to(() => const NewsScreen());
-      }
-    });
-  }
-
-  @override
   Widget build(BuildContext context) {
     return GetBuilder<GeneralNewsController>(builder: (newsController) {
       return Scaffold(

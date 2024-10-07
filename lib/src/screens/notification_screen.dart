@@ -66,20 +66,32 @@ class _NotificationScreenState extends State<NotificationScreen> {
                 ),
               ),
               onPressed: () async {
-                var status = await Permission.notification.request();
-                if (status.isGranted) {
-                  await Get.find<GeneralNewsController>().getUserData();
-                  Get.to(() => const NewsScreen());
-                } else if (status.isDenied) {
-                  print("Notification permission denied");
-                } else if (status.isPermanentlyDenied) {
-                  openAppSettings();
-                }
+                await requestPermission(permission: Permission.notification);
               },
               child: Text('Continue', style: Fonts.fontRobot(
               fontWeight: FontWeight.w500,
               fontSize: 16,
               color: AppColors.whiteColor),))),
     );
+  }
+
+  Future<void> requestPermission({required Permission permission}) async{
+    final status = await permission.status;
+
+    if(status.isGranted){
+      Get.find<GeneralNewsController>().getUserData();
+      Get.to(() => const NewsScreen());
+      debugPrint('Already granted');
+    } else if(status.isDenied) {
+      if(await permission.request().isGranted){
+        Get.find<GeneralNewsController>().getUserData();
+        Get.to(() => const NewsScreen());
+        debugPrint('Granted');
+      } else {
+        debugPrint('Not Granted');
+      }
+    }else {
+      debugPrint('Not Granted');
+    }
   }
 }
