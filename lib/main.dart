@@ -1,7 +1,14 @@
+import 'package:blott_mobile_app/src/data/controller/news_controller.dart';
+import 'package:blott_mobile_app/src/data/repository/news_repository.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
+import 'src/binding/dependencies/dependencies.dart' as dep;
 
-void main() {
+Future<void> main() async {
   runApp(const MyApp());
+  await dep.init();
+  await GetStorage.init();
 }
 
 class MyApp extends StatelessWidget {
@@ -10,7 +17,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Blott',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
