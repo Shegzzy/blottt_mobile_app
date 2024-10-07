@@ -38,15 +38,10 @@ class _NewsScreenState extends State<NewsScreen> {
           title: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              GestureDetector(
-                onTap: (){
-                  newsController.removeUserData();
-                },
-                child: Text('Hey ${newsController.firstName}', style: Fonts.fontRobot(
-                    fontWeight: FontWeight.w900,
-                    fontSize: 32,
-                    color: AppColors.whiteColor),),
-              ),
+              Text('Hey ${newsController.firstName}', style: Fonts.fontRobot(
+                  fontWeight: FontWeight.w900,
+                  fontSize: 32,
+                  color: AppColors.whiteColor),),
               SizedBox(height: Dimensions.height15,),
               Visibility(
                 visible: newsController.errorFetchingNews,
