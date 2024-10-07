@@ -9,12 +9,10 @@ import 'package:get_storage/get_storage.dart';
 import 'src/binding/dependencies/dependencies.dart' as dep;
 
 Future<void> main() async {
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   await dep.init();
   await GetStorage.init();
-  WidgetsBinding.instance.addPostFrameCallback((_) async{
-    await Get.find<GeneralNewsController>().getUserData();
-  });
-  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  await Get.find<GeneralNewsController>().getUserData();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
 
   await Future.delayed(const Duration(seconds: 5));
