@@ -63,7 +63,7 @@ class GeneralNewsController extends GetxController implements GetxService {
   }
 
   Future<String> getUserData() async{
-    firstName = await localStorage.readData('FirstName');
+    firstName = localStorage.readData('FirstName') ?? '';
     update();
     return firstName;
   }
