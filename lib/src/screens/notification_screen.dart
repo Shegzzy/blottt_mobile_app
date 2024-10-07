@@ -79,7 +79,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
     final status = await permission.status;
 
     if(status.isGranted){
-      Get.find<GeneralNewsController>().getUserData();
+      await Get.find<GeneralNewsController>().getUserData();
       Get.to(() => const NewsScreen());
       debugPrint('Already granted');
     } else if(status.isDenied) {

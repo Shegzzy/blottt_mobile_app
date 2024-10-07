@@ -62,8 +62,8 @@ class GeneralNewsController extends GetxController implements GetxService {
     await localStorage.saveData('LastName', lastName);
   }
 
-  String getUserData() {
-    firstName = localStorage.readData('FirstName') ?? '';
+  Future<String> getUserData() async{
+    firstName = await localStorage.readData('FirstName');
     update();
     return firstName;
   }

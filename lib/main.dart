@@ -11,7 +11,9 @@ Future<void> main() async {
   runApp(const MyApp());
   await dep.init();
   await GetStorage.init();
-  await Get.find<GeneralNewsController>().getUserData();
+  WidgetsBinding.instance.addPostFrameCallback((_) async{
+    await Get.find<GeneralNewsController>().getUserData();
+  });
 }
 
 class MyApp extends StatelessWidget {
